@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> COUNT! </title>
+  <link rel="icon" href="./a.png">
+  <link rel="stylesheet" type="text/css" href="./a.css">
+</head>
+
+<body>
+
+
+ <div class='box noselect'>
+  <div style='display: table; height: 100%; width: 100%;'>
+   <div style='display: table-cell; vertical-align: middle;'>
+   
+   <div style='text-align: center;'>
+
+   <div style='font-size: 1.5em; color: #58de; margin: 3vh;'><div style='display: inline-block'>on attend jusqu'au</div> <div style='display: inline-block'>2022-03-16-1730 EST</div> </div>
+   
+    <table class='mytables' style='margin: 3vh auto;'>
+     <tr><td>milliseconds </td><td><div class='myoutputs' id='d_ms_output'></div></td></tr>
+     <tr><td>seconds </td><td><div class='myoutputs' id='d_s_output'></div></td></tr>
+     <tr><td>minutes </td><td><div class='myoutputs' id='d_min_output'></div></td></tr>
+     <tr><td>hours </td><td><div class='myoutputs' id='d_hrs_output'></div></td></tr>
+     <tr><td>days </td><td><div class='myoutputs' id='n_days_output'></div></td></tr>
+    </table>
+      
+   </div>
+   
+   </div>
+  </div>
+ </div>
+
+</body>
+
+<script>
+
+let t_2 = new Date(2022, 2, 16, 17, 30, 0, 0);
+
+let d_ms_output, d_s_output;
+
+window.addEventListener('load', function() {
+
+  d_ms_output = document.getElementById('d_ms_output');
+  d_s_output = document.getElementById('d_s_output');
+  d_min_output = document.getElementById('d_min_output');
+  d_hrs_output = document.getElementById('d_hrs_output');
+  n_days_output = document.getElementById('n_days_output');
+  
+  window.setInterval(function() {
+
+    let t_1 = new Date();
+
+    let d_ms = abc(t_1, t_2);
+
+    d_ms_output.innerHTML = d_ms.toFixed(3);
+    d_s_output.innerHTML = (d_ms / 1000).toFixed(3);
+    d_min_output.innerHTML = (d_ms / (1000 * 60)).toFixed(3);
+    d_hrs_output.innerHTML = (d_ms / (1000 * 60 * 60)).toFixed(3);
+    n_days_output.innerHTML = (d_ms / (1000 * 60 * 60 * 24)).toFixed(3);
+  
+  }, 1000/30);
+
+});
+
+
+
+function abc(t_1, t_2) {
+
+  let ms_1 = t_1.getTime();
+  let ms_2 = t_2.getTime();
+  let d_ms = ms_2 - ms_1;
+  
+  return d_ms;
+}
+
+</script>
+</html>

@@ -1,0 +1,36 @@
+
+html, body {
+ height: 100%;
+ padding: 0%;
+ margin: 0%;
+ font-family: 'Abel', Trebuchet MS, Helvetica, sans-serif;
+}
+
+body {
+ position: absolute;
+ top:0;
+ bottom:0;
+ right:0;
+ left:0;
+ overflow: hidden;
+}
+
+.box {
+  margin: 1vh;
+  border: 0.25vh solid #7b79;
+  height: 97.5vh;
+  background-color: #fff0;
+}
+
+
+
+.mytables {
+ border-collapse: collapse;
+}
+.mytables td {
+ border: 1px solid #eee;
+ padding: 2vh;
+}
+.mytables td .myoutputs {
+ text-align: right;
+}
