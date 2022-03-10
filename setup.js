@@ -12,12 +12,16 @@
     main.style.height = window.innerHeight + 'px';
     
     box = document.getElementById('box');
-    box.style.width = (0.98*window.innerWidth - 4) + 'px';
-    box.style.height = (0.98*window.innerHeight - 4) + 'px';
-    box.style.top = 0.01*window.innerWidth + 'px';
-    box.style.left = 0.01*window.innerWidth + 'px';
-    box.style.border = '2px solid #7b79';
     
+    let border_width = 0.02*window.innerWidth;
+    let line_width = 2;
+    
+    box.style.width = (window.innerWidth - 2*border_width - 2*line_width) + 'px';
+    box.style.height = (window.innerHeight - 2*border_width - 2*line_width) + 'px';
+    box.style.top = border_width + 'px';
+    box.style.left = border_width + 'px';
+    box.style.border = line_width + 'px solid #7b79';
+    // correct height
     
   }); // closing window.onload
   
