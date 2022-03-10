@@ -1,4 +1,29 @@
 
+(function() {
+  
+  let main, box;
+  
+  window.addEventListener('load', function() {
+    
+    main = document.getElementById('main');
+    main.style.top = 0;
+    main.style.left = 0;
+    main.style.width = window.innerWidth + 'px';
+    main.style.height = window.innerHeight + 'px';
+    
+    box = document.getElementById('box');
+    box.style.width = (0.98*window.innerWidth - 4) + 'px';
+    box.style.height = (0.98*window.innerHeight - 4) + 'px';
+    box.style.top = 0.01*window.innerWidth + 'px';
+    box.style.left = 0.01*window.innerWidth + 'px';
+    box.style.border = '2px solid #7b79';
+    
+    
+  }); // closing window.onload
+  
+})(); // closing anon
+
+
 let t_2 = new Date(2022, 2, 16, 17, 30, 0, 0);
 
 let d_ms_output, d_s_output;
