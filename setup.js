@@ -28,11 +28,15 @@
 })(); // closing anon
 
 
-let t_2 = new Date(2022, 2, 16, 17, 30, 0, 0);
+let d_2 = new Date("2022-03-16T17:30");
+d_2.toLocaleString('en-US', { timeZone: 'America/Toronto' });
+console.log(d_2);
 
 let d_ms_output, d_s_output;
 
 window.addEventListener('load', function() {
+
+  document.getElementById('destination_time').innerHTML = d_2;
 
   d_ms_output = document.getElementById('d_ms_output');
   d_s_output = document.getElementById('d_s_output');
@@ -44,7 +48,7 @@ window.addEventListener('load', function() {
 
     let t_1 = new Date();
 
-    let d_ms = abc(t_1, t_2);
+    let d_ms = abc(t_1, d_2);
 
     d_ms_output.innerHTML = d_ms.toFixed(3);
     d_s_output.innerHTML = (d_ms / 1000).toFixed(3);
