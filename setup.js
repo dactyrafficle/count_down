@@ -28,27 +28,23 @@
 })(); // closing anon
 
 
-let d_2 = new Date("2022-03-16T17:30");
-d_2.toLocaleString('en-US', { timeZone: 'America/Toronto' });
-console.log(d_2);
-
-let d_ms_output, d_s_output;
+let target_date_time = new Date("2022-03-16T17:30:00.000-04:00");
 
 window.addEventListener('load', function() {
 
-  document.getElementById('destination_time').innerHTML = d_2;
+  document.getElementById('destination_time').innerHTML = '2022-03-16 17:30 EST (GMT-0400)';
 
-  d_ms_output = document.getElementById('d_ms_output');
-  d_s_output = document.getElementById('d_s_output');
-  d_min_output = document.getElementById('d_min_output');
-  d_hrs_output = document.getElementById('d_hrs_output');
-  n_days_output = document.getElementById('n_days_output');
+  let d_ms_output = document.getElementById('d_ms_output');
+  let d_s_output = document.getElementById('d_s_output');
+  let d_min_output = document.getElementById('d_min_output');
+  let d_hrs_output = document.getElementById('d_hrs_output');
+  let n_days_output = document.getElementById('n_days_output');
   
   window.setInterval(function() {
 
     let t_1 = new Date();
 
-    let d_ms = abc(t_1, d_2);
+    let d_ms = abc(t_1, target_date_time);
 
     d_ms_output.innerHTML = d_ms.toFixed(3);
     d_s_output.innerHTML = (d_ms / 1000).toFixed(3);
