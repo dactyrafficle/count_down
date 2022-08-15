@@ -1,4 +1,9 @@
 
+let my_date = '2022-10-08';
+let my_time = "17:30";
+let target_date_time = new Date(my_date + "T" + my_time + ":00.000-04:00");
+
+
 (function() {
   
   let main, box;
@@ -28,11 +33,10 @@
 })(); // closing anon
 
 
-let target_date_time = new Date("2022-03-16T17:30:00.000-04:00");
 
 window.addEventListener('load', function() {
 
-  document.getElementById('destination_time').innerHTML = '2022-03-16 17:30 EST (GMT-0400)';
+  document.getElementById('destination_time').innerHTML = my_date + '-' + my_time + ' EST (GMT-0400)';
 
   let d_ms_output = document.getElementById('d_ms_output');
   let d_s_output = document.getElementById('d_s_output');
