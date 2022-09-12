@@ -1,9 +1,53 @@
 
-let my_date = '2022-10-08';
-let my_time = "17:30";
+let my_date = '2022-09-24';
+let my_time = "16:55";
 let target_date_time = new Date(my_date + "T" + my_time + ":00.000-04:00");
 
 
+(function() {
+
+  let box;
+  let animation_container;
+  
+  window.addEventListener('load', function() {
+    
+    box = new Box();
+    animation_container = document.getElementById('animation_container');
+    animation_container.appendChild(box.RETURN_CONTAINER());
+
+    // INITIALIZE
+    box.RESIZE_BOX(window.innerWidth*0.95, window.innerHeight*0.95);
+    box.RANGE_X(0, 100);          
+    box.RANGE_Y(0, 100);
+  
+    // SHOW GRIDLINES 
+    box.LINE_WIDTH(1);
+    box.STROKE_STYLE('#ddd');
+    box.SHOW_GRID_X(10);
+    box.SHOW_GRID_Y(10);
+  
+  }); // closing window.onload()
+  
+  window.addEventListener('resize', function() {
+    
+    // INITIALIZE
+    box.RESIZE_BOX(window.innerWidth*0.95, window.innerHeight*0.95);
+    box.RANGE_X(0, 100);          
+    box.RANGE_Y(0, 100);
+    
+    // SHOW GRIDLINES 
+    box.LINE_WIDTH(1);
+    box.STROKE_STYLE('#ddd');
+    box.SHOW_GRID_X(10);
+    box.SHOW_GRID_Y(10);
+    
+  }); // closing window.resize()
+  
+})(); // closing anon()
+
+
+
+/*
 (function() {
   
   let main, box;
@@ -32,7 +76,7 @@ let target_date_time = new Date(my_date + "T" + my_time + ":00.000-04:00");
   
 })(); // closing anon
 
-
+*/
 
 window.addEventListener('load', function() {
 

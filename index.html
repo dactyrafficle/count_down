@@ -2,37 +2,64 @@
 <html>
 
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> COUNT! </title>
-  <link rel="icon" href="./a.png">
-  <link rel="stylesheet" type="text/css" href="./a.css">
-  
+
+  <link rel="icon" href="./includes/a.png">
+
+  <script src='./includes/r_box.js'></script>
   <script src='./setup.js'></script>
+  
+  <style>
+   html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+   }
+  </style>
+  
 </head>
 
 <body>
 
-<div id='main' style='position: absolute;'>
+
+    
+  <div style='width:100%; display:flex; justify-content:center; flex-direction: row;'>
+    <div id='animation_container'></div>
+  </div>
+
+  <div style='position: absolute; top:0; left: 0; font-family: calibri;'>
+  
+    <div style='text-align: center;'>
+      <div style='font-size: 1.5em; color: #58de; margin: 3vh;'>
+        <div>on attend jusqu'au</div>
+        <div id='destination_time'></div>
+      </div>
+    </div>
+   
+    <table class='mytables' style='margin: 3vh auto;'>
+      <tr><td>milliseconds </td><td><div class='myoutputs' id='d_ms_output'></div></td></tr>
+      <tr><td>seconds </td><td><div class='myoutputs' id='d_s_output'></div></td></tr>
+      <tr><td>minutes </td><td><div class='myoutputs' id='d_min_output'></div></td></tr>
+      <tr><td>hours </td><td><div class='myoutputs' id='d_hrs_output'></div></td></tr>
+      <tr><td>days </td><td><div class='myoutputs' id='n_days_output'></div></td></tr>
+    </table>
+
+  </div>
+
+<div id='main' style='position: absolute; display: none;'>
 
  <div id='box' class='noselect' style='position: absolute;'>
   <div style='display: table; height: 100%; width: 100%;'>
    <div style='display: table-cell; vertical-align: middle;'>
    
-   <div style='text-align: center;'>
-
-   <div style='font-size: 1.5em; color: #58de; margin: 3vh;'>
-    <div style='display: inline-block;'>on attend jusqu'au</div>
-    <div id='destination_time' style='display: inline-block;'></div>
-   </div>
    
-    <table class='mytables' style='margin: 3vh auto;'>
-     <tr><td>milliseconds </td><td><div class='myoutputs' id='d_ms_output'></div></td></tr>
-     <tr><td>seconds </td><td><div class='myoutputs' id='d_s_output'></div></td></tr>
-     <tr><td>minutes </td><td><div class='myoutputs' id='d_min_output'></div></td></tr>
-     <tr><td>hours </td><td><div class='myoutputs' id='d_hrs_output'></div></td></tr>
-     <tr><td>days </td><td><div class='myoutputs' id='n_days_output'></div></td></tr>
-    </table>
+
+
+   
+
       
    </div>
    
@@ -42,8 +69,11 @@
 
 </div> <!-- closing main -->
 
+
+
+
+
 </body>
 
-<script></script>
 
 </html>
